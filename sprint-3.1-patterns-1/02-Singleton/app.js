@@ -6,17 +6,34 @@
 
 const Jugador = require('./models/jugador');
 const Joc = require('./models/joc');
+const Marcador = require('./models/marcador');
 
+
+
+// Crear Jugadors (No es permetren numeros ni strings vuits).
 const jugador = new Jugador();
-const jugador1 = jugador.crearJugador('Andres');
+
+const jugador1 = jugador.crearJugador('Lucas');
 const jugador2 = jugador.crearJugador('Maria');
 
 
-//! Falta corregir que no se puedan insertar jugadores no creados
+// Afegir jugadors a un joc (no es poden inserir jugadors no creats).
 const joc = new Joc();
-joc.afegirAlJoc('andres');
+
+joc.afegirAlJoc(jugador1);
 joc.afegirAlJoc(jugador2);
 joc.afegirAlJoc('Pepe');
 
+//Pujar punts a un jugador
 
-console.log(joc.afegits)
+//Treure punts a un jugador
+
+// Afegir i treurar punts a un jugador perque el marcador camviï.
+const marcador = new Marcador()
+
+// Mostrar marcador
+// const marcador = new Marcador(0);
+// marcador.afegirPunts(jugador2, 10);
+
+
+console.log(Marcador);

@@ -5,14 +5,15 @@ class Joc {
     constructor(){
         this.afegits = [];
     }
+
     
-    afegirAlJoc(Jugador){
-        if(Jugador){
-        return this.afegits.push({Jugador})
-        } else if (Jugador) {
-            console.log(`Si us plau, introdueix les dades correctament`)
+    afegirAlJoc(jugador){
+        if(jugador.nom === undefined){
+            return console.log(`El jugador '${jugador}' no existeix, has de registrar-ho per poder jugar.`);
         }else {
-            console.log(`El jugador ${Jugador} no existeix`)
+            console.log(`El jugador '${jugador.nom}' ha sigut afegit correctament al joc.`)
+            return this.afegits.push(jugador);
+            
         }
     };
 };
