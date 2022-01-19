@@ -1,8 +1,10 @@
 class Jugador {
 
     constructor(nom) {
-        this.nom = nom,
-        this.punts = 0
+        this.nom = nom;
+        this.puntsAfegits = [];
+        this.puntsTrets = [];
+        this.puntsTotals = [];
     }
 
     crearJugador(nom) {

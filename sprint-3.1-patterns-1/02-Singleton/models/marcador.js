@@ -1,23 +1,24 @@
-const Jugador = require('./jugador');
-const Joc = require('./joc');
-
 class Marcador {
-    constructor(){
-        this.jugador = Jugador.nom;
-        this.punts = Jugador.punts;
+
+    constructor() {
+        throw new Error('Fes servir Marcador.puntsTotals(jugador)');
     }
 
-    mostrarPunts(jugador){
-        if(!Marcador){
-            jugador.punts.push(punts);
 
-            return new Marcador()
-        }
-        else{
-            throw `El jugador ${jugador.nom} ha d'estar ficat dins del joc.`
+    static puntsTotals(jugador) {
+
+        if (!!jugador.nom) {
+            const suma = jugador.puntsAfegits.map(n => n).reduce((a, b) => a + b, 0)
+            const resta = jugador.puntsTrets.map(n => n).reduce((a, b) => a - b, 0)
+            const total = jugador.puntsTotals.push(suma + resta);
+
+            return new Marcador();
+        } else {
+            console.log(`${jugador.nom} ja te asignat un marcador`)
         }
 
     }
+
 };
 
 module.exports = Marcador;
