@@ -1,22 +1,18 @@
 class Marcador {
 
-    constructor() {
-        throw new Error('Fes servir Marcador.puntsTotals(jugador)');
+    constructor(){
+        this.singleton = false
     }
 
 
-    static puntsTotals(jugador) {
-
-        if (!!jugador.nom) {
-            const suma = jugador.puntsAfegits.map(n => n).reduce((a, b) => a + b, 0)
-            const resta = jugador.puntsTrets.map(n => n).reduce((a, b) => a - b, 0)
-            const total = jugador.puntsTotals.push(suma + resta);
-
-            return new Marcador();
-        } else {
-            console.log(`${jugador.nom} ja te asignat un marcador`)
+    static guanyador(jugadors) {
+        if(!this.singleton){
+            let guanyador = Math.max(...jugadors);
+            console.log(`Ha guanyat la puntuació ${guanyador}!!!!!`)
+            this.singleton = true;
+        }else{
+            console.log(`Ja s'ha decidit el guanyador, no siguis agonies!!!!`)
         }
-
     }
 
 };

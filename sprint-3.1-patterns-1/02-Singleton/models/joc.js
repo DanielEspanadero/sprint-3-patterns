@@ -36,6 +36,15 @@ class Joc {
             return console.log(`S'han tret ${puntsTrets} punts a ${jugador.nom}.`);
         }
     };
+
+    puntsTotals(jugador) {
+
+        const suma = jugador.puntsAfegits.map(n => n).reduce((a, b) => a + b, 0)
+        const resta = jugador.puntsTrets.map(n => n).reduce((a, b) => a - b, 0)
+        const total = jugador.puntsTotals.push(suma + resta);
+        console.log(`${jugador.nom} te ${jugador.puntsTotals} punts.`)
+
+    }
 };
 
 module.exports = Joc;
