@@ -1,3 +1,4 @@
+const Middleware = require('./middleware');
 const numeros = require('./numeros.json');
 
 
@@ -12,7 +13,9 @@ const calculadora = (operacio, valors) => {
     }
 
     return resultat;
-}
+};
+
+const app = new Middleware(calculadora);
 
 
-console.log(calculadora('suma', [numeros[1].a, numeros[1].b]))
+console.log(calculadora('suma', [numeros[1].a + numeros[1].b]))
