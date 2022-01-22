@@ -1,5 +1,6 @@
 const Middleware = require('./middleware');
 const numeros = require('./numeros.json');
+const app = new Middleware(calculadora);
 
 
 const calculadora = (operacio, valors) => {
@@ -15,7 +16,9 @@ const calculadora = (operacio, valors) => {
     return resultat;
 };
 
-const app = new Middleware(calculadora);
-
-
-console.log(calculadora('suma', [numeros[1].a + numeros[1].b]))
+app.use((req, next) => {
+    number1 = req[0].a;
+    number2 = req[1].b;
+    console.log(`divisio entre ${number1} i ${number2}: ` + number1 / number2);
+    next();
+});
