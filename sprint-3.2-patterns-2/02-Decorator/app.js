@@ -2,4 +2,4 @@
 //TODO Crea una petita aplicació que calculi el cost d'uns quants Articles en euros a partir de les seves divises incials, aplicant diferents conversions que usin el Decorator del punt anterior.
 // https://stackoverflow.com/questions/48055771/how-do-i-use-and-apply-javascript-decorators
 
-proba2
+proba
