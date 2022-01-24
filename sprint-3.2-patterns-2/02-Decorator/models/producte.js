@@ -1,9 +1,9 @@
 class Producte {
-    constructor(name, model, price, currency) {
-        this.name = name;
+    constructor(nom, model, preu, divisa) {
+        this.nom = nom;
         this.model = model;
-        this.price = price;
-        this.currency = currency;
+        this.preu = preu;
+        this.divisa = divisa;
     }
 
 }
