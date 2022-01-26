@@ -5,20 +5,22 @@ const Usuari = require('./usuari');
 
 class Temes {
     
-    constructor(tema){
-        this.tema = tema;
+    constructor(){
         this.temes = [];
+        this.usuaris = [];
     }
 
-    static crearTema(usuari, tema){
-        new Temes(tema);
+    crearTema(usuari, tema){
+        this.temes.push(tema);
+        this.usuaris.push(usuari.nom + ' ' + usuari.cognoms);
         console.log(`L'usuari ${usuari.nom} ha creat el tema ${tema}`)
+        console.log(this.temes)
+        console.log(this.usuaris)
     }
+
     afegirMissatge(usuari, missatge, tema){
         console.log(`${usuari.nom} ha afegit el missatge ${missatge}`)
     };
-
-
 
 };
 
