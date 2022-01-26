@@ -10,15 +10,22 @@ class Temes {
         this.usuaris = [];
     }
 
+    //! Em falta afegir les notificacions de quan un usuari afegeix un tema.
+    //! Mostrar per consola cadasccuns dels usuaris afegits a un tema.
     crearTema(usuari, tema){
-        this.temes.push(tema);
-        this.usuaris.push(usuari.nom + ' ' + usuari.cognoms);
-        console.log(`L'usuari ${usuari.nom} ha creat el tema ${tema}`)
-        console.log(this.temes)
-        console.log(this.usuaris)
-    }
+        if(usuari.nom === undefined && usuari.cognoms === undefined){
+            console.log(`L'usuari ${usuari} no existeix, has de crear l'usuari abans de crear un tema`);
+        }else{
+            this.temes.push(tema);
+            this.usuaris.push(usuari.nom + ' ' + usuari.cognoms);
+            console.log(`L'usuari ${usuari.nom} ha creat el tema ${tema}`)
+            console.log(this.temes)
+            console.log(this.usuaris)
+        }
+    };
 
     afegirMissatge(usuari, missatge, tema){
+
         console.log(`${usuari.nom} ha afegit el missatge ${missatge}`)
     };
 
