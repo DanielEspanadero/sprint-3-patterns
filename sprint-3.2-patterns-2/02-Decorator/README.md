@@ -73,102 +73,16 @@ Vestir ropa es un ejemplo del uso de decoradores. Cuando tienes frío, te cubres
 ✖️ Es difícil implementar un decorador de tal forma que su comportamiento no dependa del orden en la pila de decoradores.
 ✖️ El código de configuración inicial de las capas pueden tener un aspecto desagradable.
 
-## 🧑🏻‍💻 Uso del patrón en TypeScript
+## 🛠 Herramientas que he utilizado
 
-```
-/**
- * The base Component interface defines operations that can be altered by
- * decorators.
- */
-interface Component {
-    operation(): string;
-}
+### 😐 Expresiones regulares
 
-/**
- * Concrete Components provide default implementations of the operations. There
- * might be several variations of these classes.
- */
-class ConcreteComponent implements Component {
-    public operation(): string {
-        return 'ConcreteComponent';
-    }
-}
+Las expresiones regulares son patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas. En JavaScript, las expresiones regulares también son objetos. Estos patrones se utilizan con los métodos exec() y test() de RegExp, y con match(), matchAll(), replace(), replaceAll() (en-US), search() y split() métodos de String.
 
-/**
- * The base Decorator class follows the same interface as the other components.
- * The primary purpose of this class is to define the wrapping interface for all
- * concrete decorators. The default implementation of the wrapping code might
- * include a field for storing a wrapped component and the means to initialize
- * it.
- */
-class Decorator implements Component {
-    protected component: Component;
+El objeto RegExp() se utiliza para hacer coincidir texto con un patrón.
 
-    constructor(component: Component) {
-        this.component = component;
-    }
+El método test() ejecuta la búsqueda de una ocurrencia entre una expresión regular y una cadena especificada. Devuelve true o false.
 
-    /**
-     * The Decorator delegates all work to the wrapped component.
-     */
-    public operation(): string {
-        return this.component.operation();
-    }
-}
+### 🎁 Object.entries()
 
-/**
- * Concrete Decorators call the wrapped object and alter its result in some way.
- */
-class ConcreteDecoratorA extends Decorator {
-    /**
-     * Decorators may call parent implementation of the operation, instead of
-     * calling the wrapped object directly. This approach simplifies extension
-     * of decorator classes.
-     */
-    public operation(): string {
-        return `ConcreteDecoratorA(${super.operation()})`;
-    }
-}
-
-/**
- * Decorators can execute their behavior either before or after the call to a
- * wrapped object.
- */
-class ConcreteDecoratorB extends Decorator {
-    public operation(): string {
-        return `ConcreteDecoratorB(${super.operation()})`;
-    }
-}
-
-/**
- * The client code works with all objects using the Component interface. This
- * way it can stay independent of the concrete classes of components it works
- * with.
- */
-function clientCode(component: Component) {
-    // ...
-
-    console.log(`RESULT: ${component.operation()}`);
-
-    // ...
-}
-
-/**
- * This way the client code can support both simple components...
- */
-const simple = new ConcreteComponent();
-console.log('Client: I\'ve got a simple component:');
-clientCode(simple);
-console.log('');
-
-/**
- * ...as well as decorated ones.
- *
- * Note how decorators can wrap not only simple components but the other
- * decorators as well.
- */
-const decorator1 = new ConcreteDecoratorA(simple);
-const decorator2 = new ConcreteDecoratorB(decorator1);
-console.log('Client: Now I\'ve got a decorated component:');
-clientCode(decorator2);
-```
+El método Object.entries() devuelve una matriz de pares propios de una propiedad enumerable [key, value] de un objeto dado, en el mismo orden que es proporcionado por for...in (La diferencia es que un bucle for-in enumera las propiedades en la cadena de prototipos).

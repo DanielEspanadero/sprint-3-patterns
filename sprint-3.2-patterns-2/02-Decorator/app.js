@@ -1,4 +1,4 @@
-//TODO Crea un Decorator en un arxiu que retorni una funció.Aquesta funció efectuarà una conversió de moneda a euros multiplicant pel coeficient de conversió del fitxer adjunt currency_conversions.json en funció de la divisa original.
+//TODO Crea un Decorator en un arxiu que retorni una funció.Aquesta funció efectuarà una conversió de moneda a euros multiplicant pel coeficient de conversió del fitxer adjunt currency_conversions.json en funció de la divisa original. [x]
 //TODO Crea una petita aplicació que calculi el cost d'uns quants Articles en euros a partir de les seves divises incials, aplicant diferents conversions que usin el Decorator del punt anterior. [x]
 
 const Producte = require('./models/producte');

@@ -13,7 +13,7 @@ class Decorator {
     convertidor(divisa) {
         try {
             const regex = new RegExp(this.obtenirProducte().divisa + '_' + divisa);
-            const conversio = this.obtenirProducte().preu * Object.entries(data).find(key => regex.test(key))[1]
+            const conversio = this.obtenirProducte().preu * Object.entries(data).find(n => regex.test(n))[1]
 
             console.log(`\n--- Es farà la conversió de ${this.obtenirProducte().divisa} a ${divisa} ---`);
 
