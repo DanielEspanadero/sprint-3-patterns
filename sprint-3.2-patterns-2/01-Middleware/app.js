@@ -28,12 +28,12 @@ const calculadora = (operacio, valors) => {
 const middleware = new Middleware();
 
 middleware.use(function (info, next) {
-    console.log(`El numero ${numeros[1].a} elevat a ${numeros[1].b} es igual a ${numeros[1].a*numeros[1].b}`); 
+    console.log(`El cuadrat de ${numeros[1].a} es igual a ${Math.pow(numeros[1].a, numeros[2].b)}`); 
     next();
 });
 
 middleware.use(function (info, next) {
-    console.log(`El cub ${numeros[1].a} elevat a ${numeros[1].b} es igual a ${numeros[1].a ** numeros[1].b}`); 
+    console.log(`El cub de ${numeros[1].a} es igual a ${Math.pow(numeros[1].a, numeros[0].a)}`); 
     next();
 });
 
