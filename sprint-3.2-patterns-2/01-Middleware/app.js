@@ -27,7 +27,7 @@ const calculadora = (operacio, valors) => {
 
 const middleware = new Middleware();
 
-middleware.use(function (info, next) {
+middleware.use(function (info, next){
     console.log(`El cuadrat de ${numeros[1].a} es igual a ${Math.pow(numeros[1].a, numeros[2].b)}`); 
     next();
 });
