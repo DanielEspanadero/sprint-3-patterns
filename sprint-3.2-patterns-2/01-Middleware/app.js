@@ -23,8 +23,6 @@ const calculadora = (operacio, valors) => {
     return resultat;
 };
 
-// console.log(calculadora('suma', [numeros[0].a, numeros[0].b]))
-
 const middleware = new Middleware();
 
 middleware.use(function (info, next){

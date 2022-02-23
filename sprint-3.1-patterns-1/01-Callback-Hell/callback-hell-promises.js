@@ -6,7 +6,7 @@ const outbox = join(__dirname, 'outbox');
 const reverseText = str => str.split('').reverse().join('');
 
 // Read and reverse contents of text files in a directory
-
+api
 readdir(inbox)
     .then(files => files.forEach(file =>
         readFile(join(inbox, file), 'utf8')
